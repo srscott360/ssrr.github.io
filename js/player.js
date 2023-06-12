@@ -14,11 +14,11 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             'autoplay': 1,
             'controls': 0,
-            'showinfo': 1,
             'enablejsapi': 1,
             'loop': 1,
             'autohide': 1,
-            'playsinline': 1,
+            'playsinline': 0,
+            'modestbranding': 1,
         },
         events: {
             'onReady': onPlayerReady,
@@ -29,7 +29,6 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
     event.target.playVideo();
     if (player.getPlayerState() != 1) {
-        event.target.mute();
         event.target.playVideo();
     }
 }
